@@ -24,9 +24,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="recordAudio" destination="BYZ-38-t0r" eventType="touchUpInside" id="nKB-1U-p45"/>
-                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dli-UJ-4bZ"/>
-                                    <action selector="recordAudio:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zsx-dV-EIm"/>
+                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a9u-ol-Fij"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLe-s8-5Qm">
@@ -58,7 +56,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="recordLabel" destination="MLe-s8-5Qm" id="51u-wh-BiZ"/>
+                        <outlet property="recordLabel" destination="MLe-s8-5Qm" id="loe-UF-kUR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
