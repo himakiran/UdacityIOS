@@ -9,7 +9,7 @@ import UIKit
 import AVFoundation
 
 
-class RecordSoundsViewController: UIViewController {
+class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
 
     var audioRecorder: AVAudioRecorder!
     @IBOutlet weak var recordingLabel: UILabel!
@@ -35,6 +35,7 @@ class RecordSoundsViewController: UIViewController {
         try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
 
         try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
+        audioRecorder.delegate = self
         audioRecorder.isMeteringEnabled = true
         audioRecorder.prepareToRecord()
         audioRecorder.record()
@@ -50,5 +51,10 @@ class RecordSoundsViewController: UIViewController {
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
     }
+    
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        <#code#>
+    }
+    
 }
 
