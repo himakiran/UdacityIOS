@@ -56,6 +56,8 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func stopButtonPressed(_ sender: AnyObject) {
         stopAudio()
     }
+    
+    // MARK: setupaudio
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +65,8 @@ class PlaySoundsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    // MARK: configureUI
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
