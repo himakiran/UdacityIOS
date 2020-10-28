@@ -24,8 +24,9 @@ class ViewController: UIViewController {
         uilabel.frame = CGRect(x: 150, y: 150, width: 60, height: 60)
         uilabel.text = "00" // spaces to align with click button below
         uilabel.backgroundColor=UIColor.darkGray
-        view.addSubview(uilabel)
         self.label = uilabel
+        view.addSubview(uilabel)
+        
         
         // add another UI label
         let uilabel2 = UILabel()
@@ -56,6 +57,7 @@ class ViewController: UIViewController {
         self.label.text = "\(self.count)"
         self.label2.text = colorsLabels[self.count % 5]
         self.button.backgroundColor = colorsList[self.count % 5]
+        view.backgroundColor = colorsList[(self.count + 1) % 5]
         
     }
 
