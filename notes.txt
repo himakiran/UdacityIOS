@@ -1,0 +1,55 @@
+Image Picker Controller
+@IBAction func experiment(_ sender: Any) {
+
+    let nextController = UIImagePickerController()
+    self.present(nextController, animated: true, completion: nil)
+}
+
+Activity View Controller
+@IBAction func experiment(_ sender: Any) {
+
+    let image = UIImage()
+    let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+    self.present(controller, animated: true, completion: nil)
+}
+
+Alert View Controller
+    @IBAction func experiment(_ sender: Any) {
+
+        let controller = UIAlertController()
+        controller.title = "Test Alert"
+        controller.message = "This is a test"
+
+        let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.default) { action in self.dismiss(animated: true, completion: nil)
+        }
+
+        controller.addAction(okAction)
+        self.present(controller, animated: true, completion: nil)
+    }
+/*** 
+Instantiating viewcontroller from code directly 
+***/
+    var controller: DiceViewController
+        
+        controller = self.storyboard?.instantiateViewController(withIdentifier: "DiceViewController") as! DiceViewController
+        
+        controller.firstValue = self.randomDiceValue()
+        controller.secondValue = self.randomDiceValue()
+        
+        present(controller, animated: true, completion: nil)
+/*** 
+Instantiating viewcontroller from storyboard defined viewcontroller
+***/      
+@IBAction func rollTheDice() {
+
+    // Get the DiceViewController
+    let controller: DiceViewController
+    controller = storyboard?.instantiateViewController(withIdentifier: "DiceViewController") as! DiceViewController
+
+    // Set the two values to random numbers from 1 to 6
+    controller.firstValue = randomDiceValue()
+    controller.secondValue = randomDiceValue()
+
+    // Present the view Controller
+    present(controller, animated: true, completion: nil)
+}
