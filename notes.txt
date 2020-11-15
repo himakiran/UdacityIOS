@@ -53,3 +53,40 @@ Instantiating viewcontroller from storyboard defined viewcontroller
     // Present the view Controller
     present(controller, animated: true, completion: nil)
 }
+
+/***
+Using prepareforsegue to pass values from one viewcontroller to next
+***/
+
+override func prepare(for segue: UIStoryBoardSegue, sender: Any?){
+	if segue.identifier == "rollDice" {
+            
+            let controller = segue.destination as! DiceViewController
+            
+            controller.firstValue = self.randomDiceValue()
+            controller.secondValue = self.randomDiceValue()
+        }   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
