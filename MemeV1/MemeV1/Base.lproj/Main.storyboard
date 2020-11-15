@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dox-5p-Q5u">
-                                <rect key="frame" x="20" y="64" width="374" height="44"/>
+                                <rect key="frame" x="20" y="124" width="374" height="44"/>
                                 <items>
                                     <barButtonItem image="square.and.arrow.up" catalog="system" id="c5p-f7-dio"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="XhS-ZR-Uq8"/>
@@ -32,7 +32,7 @@
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyQ-X8-mgW">
-                                <rect key="frame" x="20" y="798" width="374" height="44"/>
+                                <rect key="frame" x="20" y="738" width="374" height="44"/>
                                 <items>
                                     <barButtonItem image="photo" catalog="system" id="FDf-oe-QB9">
                                         <connections>
@@ -53,47 +53,39 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O65-Cf-E20">
-                                <rect key="frame" x="20" y="148" width="374" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="EbW-ae-G7P"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="188" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OJJ-LZ-hvW">
-                                <rect key="frame" x="20" y="718" width="374" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Nft-Iu-98m"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Jq-0O-0cL">
-                                <rect key="frame" x="20" y="327" width="374" height="242"/>
-                                <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="7Jq-0O-0cL" secondAttribute="height" multiplier="17:11" id="0Bn-17-Fci"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="188" width="374" height="530"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OJJ-LZ-hvW">
+                                <rect key="frame" x="20" y="684" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstItem="O65-Cf-E20" firstAttribute="top" secondItem="dox-5p-Q5u" secondAttribute="bottom" constant="40" id="5jX-wY-YS5"/>
-                            <constraint firstItem="7Jq-0O-0cL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9iC-eq-eod"/>
-                            <constraint firstItem="OJJ-LZ-hvW" firstAttribute="leading" secondItem="kyQ-X8-mgW" secondAttribute="leading" id="CKN-6l-iuq"/>
-                            <constraint firstItem="7Jq-0O-0cL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CP5-qt-jiT"/>
-                            <constraint firstItem="dox-5p-Q5u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="MLe-6o-tvD"/>
-                            <constraint firstItem="dox-5p-Q5u" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="Uio-1w-oZE"/>
-                            <constraint firstItem="kyQ-X8-mgW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VEl-O3-BLA"/>
-                            <constraint firstItem="dox-5p-Q5u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Z8k-R3-Dg3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Jq-0O-0cL" secondAttribute="trailing" constant="20" id="b0f-4L-WDd"/>
-                            <constraint firstItem="kyQ-X8-mgW" firstAttribute="top" secondItem="OJJ-LZ-hvW" secondAttribute="bottom" constant="40" id="biP-ZV-hAH"/>
-                            <constraint firstItem="OJJ-LZ-hvW" firstAttribute="trailing" secondItem="O65-Cf-E20" secondAttribute="trailing" id="fdP-zM-2xH"/>
-                            <constraint firstItem="kyQ-X8-mgW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="hNC-Je-B0B"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kyQ-X8-mgW" secondAttribute="bottom" constant="20" id="hNk-eM-Kfp"/>
-                            <constraint firstItem="OJJ-LZ-hvW" firstAttribute="leading" secondItem="O65-Cf-E20" secondAttribute="leading" id="hZP-ut-RQS"/>
-                            <constraint firstItem="OJJ-LZ-hvW" firstAttribute="trailing" secondItem="kyQ-X8-mgW" secondAttribute="trailing" id="lig-tn-bTS"/>
+                            <constraint firstItem="kyQ-X8-mgW" firstAttribute="leading" secondItem="OJJ-LZ-hvW" secondAttribute="leading" id="2o2-oh-K0l"/>
+                            <constraint firstItem="OJJ-LZ-hvW" firstAttribute="trailing" secondItem="O65-Cf-E20" secondAttribute="trailing" id="6jV-FT-8TR"/>
+                            <constraint firstItem="dox-5p-Q5u" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="RZu-v0-BKw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kyQ-X8-mgW" secondAttribute="bottom" constant="80" id="Zh3-K0-4cV"/>
+                            <constraint firstItem="kyQ-X8-mgW" firstAttribute="top" secondItem="OJJ-LZ-hvW" secondAttribute="bottom" constant="20" id="aIE-SE-bzL"/>
+                            <constraint firstItem="kyQ-X8-mgW" firstAttribute="trailing" secondItem="OJJ-LZ-hvW" secondAttribute="trailing" id="cZ0-7Q-Diz"/>
+                            <constraint firstItem="O65-Cf-E20" firstAttribute="trailing" secondItem="dox-5p-Q5u" secondAttribute="trailing" id="e3t-pj-p2P"/>
+                            <constraint firstItem="OJJ-LZ-hvW" firstAttribute="bottom" secondItem="7Jq-0O-0cL" secondAttribute="bottom" id="hmj-BF-xbo"/>
+                            <constraint firstItem="7Jq-0O-0cL" firstAttribute="trailing" secondItem="OJJ-LZ-hvW" secondAttribute="trailing" id="hwL-ah-hQL"/>
+                            <constraint firstItem="dox-5p-Q5u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="m9t-c5-ixd"/>
+                            <constraint firstItem="7Jq-0O-0cL" firstAttribute="leading" secondItem="O65-Cf-E20" secondAttribute="leading" id="mfg-tB-HRJ"/>
+                            <constraint firstItem="OJJ-LZ-hvW" firstAttribute="leading" secondItem="O65-Cf-E20" secondAttribute="leading" id="qac-1U-i9t"/>
+                            <constraint firstItem="7Jq-0O-0cL" firstAttribute="top" secondItem="O65-Cf-E20" secondAttribute="top" id="qfa-hu-ymI"/>
+                            <constraint firstItem="O65-Cf-E20" firstAttribute="top" secondItem="dox-5p-Q5u" secondAttribute="bottom" constant="20" id="vl5-4y-wA0"/>
+                            <constraint firstItem="dox-5p-Q5u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="xsF-vj-Bom"/>
+                            <constraint firstItem="O65-Cf-E20" firstAttribute="leading" secondItem="dox-5p-Q5u" secondAttribute="leading" id="y6D-l4-rev"/>
                         </constraints>
                     </view>
                     <connections>
@@ -112,11 +104,8 @@
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

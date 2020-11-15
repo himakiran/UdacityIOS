@@ -13,15 +13,24 @@ class ViewController: UIViewController,  UITextFieldDelegate, UIImagePickerContr
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
+    let memeTextAttributes: [NSAttributedString.Key: Any] = [
+        NSAttributedString.Key.strokeColor: UIColor.white,
+        NSAttributedString.Key.foregroundColor: UIColor.black,
+        NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSAttributedString.Key.strokeWidth:  6.0
+    ]
     
-    // setting up delegates and centering text
+    // setting up delegates and centering and formatting text
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.topTextField.delegate = self
         self.bottomTextField.delegate = self
+        self.topTextField.defaultTextAttributes = memeTextAttributes
+        self.bottomTextField.defaultTextAttributes = memeTextAttributes        
         self.topTextField.textAlignment = .center
         self.bottomTextField.textAlignment = .center
+        
         
     }
     
@@ -56,6 +65,15 @@ class ViewController: UIViewController,  UITextFieldDelegate, UIImagePickerContr
         dismiss(animated: true, completion: nil)
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = ""
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true;
+        }
+            
     
 }
 
