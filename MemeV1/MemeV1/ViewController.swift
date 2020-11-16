@@ -30,7 +30,7 @@ class ViewController: UIViewController,  UITextFieldDelegate, UIImagePickerContr
         NSAttributedString.Key.strokeColor: UIColor.white,
         NSAttributedString.Key.foregroundColor: UIColor.black,
         NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSAttributedString.Key.strokeWidth:  6.0
+        NSAttributedString.Key.strokeWidth:  4.0
     ]
     
     // setting up delegates and centering and formatting text
@@ -165,6 +165,13 @@ class ViewController: UIViewController,  UITextFieldDelegate, UIImagePickerContr
                                                 } 
                                             }
         present(vc, animated: true)
+        
+    }
+    
+    @IBAction func onCancel(_ sender: Any) {
+        self.topTextField.text = "TOP"
+        self.bottomTextField.text = "BOTTOM"
+        self.imageView.image = nil
         
     }
     
