@@ -19,16 +19,12 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dox-5p-Q5u" userLabel="TopToolbar">
                                 <rect key="frame" x="20" y="184" width="374" height="44"/>
                                 <items>
-                                    <barButtonItem image="square.and.arrow.up" catalog="system" id="c5p-f7-dio"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="XhS-ZR-Uq8"/>
-                                    <barButtonItem title="Item" style="plain" id="pdk-Od-bHg">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="g9T-ma-JUa">
-                                            <rect key="frame" x="275" y="0.0" width="79" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                            <state key="normal" title="Cancel"/>
-                                        </button>
+                                    <barButtonItem image="square.and.arrow.up" catalog="system" id="c5p-f7-dio" userLabel="shareButton">
+                                        <connections>
+                                            <action selector="shareMeme:" destination="BYZ-38-t0r" id="E6M-P4-lI2"/>
+                                        </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="XhS-ZR-Uq8"/>
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyQ-X8-mgW" userLabel="BottomToolbar">
@@ -90,9 +86,12 @@
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="OJJ-LZ-hvW" id="9Uh-BQ-0u0"/>
+                        <outlet property="bottomToolBar" destination="kyQ-X8-mgW" id="qeU-AZ-QHf"/>
                         <outlet property="cameraButton" destination="afJ-Pz-AMe" id="QlN-zq-mra"/>
                         <outlet property="imageView" destination="7Jq-0O-0cL" id="8cR-2f-sGr"/>
+                        <outlet property="shareButton" destination="c5p-f7-dio" id="UNt-Qc-RLd"/>
                         <outlet property="topTextField" destination="bAP-Gt-4yF" id="Crd-s8-hFd"/>
+                        <outlet property="topToolBar" destination="dox-5p-Q5u" id="x55-O6-sAS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

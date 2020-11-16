@@ -7,6 +7,13 @@
 
 import UIKit
 
+struct Meme {
+    let topText: NSString
+    let bottomText: NSString
+    let originalImage: UIImage?
+    let memedImage: UIImage?
+}
+
 class ViewController: UIViewController,  UITextFieldDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
@@ -14,7 +21,10 @@ class ViewController: UIViewController,  UITextFieldDelegate, UIImagePickerContr
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
+    @IBOutlet weak var topToolBar: UIToolbar!
+    @IBOutlet weak var bottomToolBar: UIToolbar!
     
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.white,
@@ -33,7 +43,7 @@ class ViewController: UIViewController,  UITextFieldDelegate, UIImagePickerContr
         self.bottomTextField.defaultTextAttributes = memeTextAttributes        
         self.topTextField.textAlignment = .center
         self.bottomTextField.textAlignment = .center
-        
+        self.shareButton.isEnabled = false
         
     }
     
@@ -71,9 +81,11 @@ class ViewController: UIViewController,  UITextFieldDelegate, UIImagePickerContr
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         imageView.image = image
+        self.shareButton.isEnabled = true
         dismiss(animated: true, completion: nil)
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
+        self.shareButton.isEnabled = false
         dismiss(animated: true, completion: nil)
     }
     
@@ -119,5 +131,43 @@ class ViewController: UIViewController,  UITextFieldDelegate, UIImagePickerContr
     @objc func keyboardWillHide(_ notification: Notification){
         view.frame.origin.y = 0
     }
+    
+    func saveMeme()  {
+        let meme = Meme(topText: self.topTextField.text! as NSString, bottomText: self.bottomTextField.text! as NSString, originalImage: self.imageView.image, memedImage: generateMeme())
+        
+    }
+    
+    func generateMeme() -> UIImage {
+            self.topToolBar.isHidden = true
+            self.bottomToolBar.isHidden = true
+            UIGraphicsBeginImageContext(self.view.frame.size)
+            view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+            let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            self.topToolBar.isHidden = false
+            self.bottomToolBar.isHidden = false
+            return memedImage
+            
+        }
+    
+    
+        
+    @IBAction func shareMeme(_ sender: Any) {
+        
+        var memeImage: UIImage
+        memeImage = generateMeme()
+        let vc = UIActivityViewController(activityItems: [memeImage], applicationActivities: [])
+        vc.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed:
+                                            Bool, arrayReturnedItems: [Any]?, error: Error?) in
+                                                if completed {
+                                                    self.saveMeme()
+                                                    return
+                                                } 
+                                            }
+        present(vc, animated: true)
+        
+    }
+    
+    
 }
 
