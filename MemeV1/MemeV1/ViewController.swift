@@ -13,6 +13,9 @@ class ViewController: UIViewController,  UITextFieldDelegate, UIImagePickerContr
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
+    
+    
+    
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.white,
         NSAttributedString.Key.foregroundColor: UIColor.black,
@@ -39,6 +42,7 @@ class ViewController: UIViewController,  UITextFieldDelegate, UIImagePickerContr
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        subscribeToKeyboardHideNotifications()
         }
     
     
@@ -91,10 +95,10 @@ class ViewController: UIViewController,  UITextFieldDelegate, UIImagePickerContr
     
     // Shifting the view up when keyboard is displayed
     @objc func keyboardWillShow(_ notification: Notification){
-        view.frame.origin.y = -getKeyboardHeight(notification)
+        view.frame.origin.y = view.frame.origin.y - (getKeyboardHeight(notification) - 160)
     }
     
-    // subscribing to keyboard notifications
+    // subscribing to keyboard show notifications
     func subscribeToKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
@@ -102,6 +106,18 @@ class ViewController: UIViewController,  UITextFieldDelegate, UIImagePickerContr
     func unsubscribeFromKeyboardNotifications() {
 
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
+    
+    // subscribing to keyboard hide notifications
+    func subscribeToKeyboardHideNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    // Shifting the view back down when keyboard is hidden
+    @objc func keyboardWillHide(_ notification: Notification){
+        view.frame.origin.y = 0
     }
 }
 

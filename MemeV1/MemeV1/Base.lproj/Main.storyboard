@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dox-5p-Q5u" userLabel="TopToolbar">
-                                <rect key="frame" x="20" y="124" width="374" height="44"/>
+                                <rect key="frame" x="20" y="184" width="374" height="44"/>
                                 <items>
                                     <barButtonItem image="square.and.arrow.up" catalog="system" id="c5p-f7-dio"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="XhS-ZR-Uq8"/>
@@ -32,7 +32,7 @@
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyQ-X8-mgW" userLabel="BottomToolbar">
-                                <rect key="frame" x="20" y="738" width="374" height="44"/>
+                                <rect key="frame" x="20" y="678" width="374" height="44"/>
                                 <items>
                                     <barButtonItem image="photo" catalog="system" id="FDf-oe-QB9">
                                         <connections>
@@ -53,16 +53,16 @@
                                 </items>
                             </toolbar>
                             <imageView clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Jq-0O-0cL">
-                                <rect key="frame" x="20" y="188" width="374" height="530"/>
+                                <rect key="frame" x="20" y="244" width="374" height="418"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OJJ-LZ-hvW">
-                                <rect key="frame" x="20" y="684" width="374" height="34"/>
+                                <rect key="frame" x="20" y="628" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bAP-Gt-4yF">
-                                <rect key="frame" x="20" y="188" width="374" height="34"/>
+                                <rect key="frame" x="20" y="244" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -72,20 +72,20 @@
                         <constraints>
                             <constraint firstItem="bAP-Gt-4yF" firstAttribute="trailing" secondItem="dox-5p-Q5u" secondAttribute="trailing" id="1w7-Su-DHc"/>
                             <constraint firstItem="7Jq-0O-0cL" firstAttribute="leading" secondItem="dox-5p-Q5u" secondAttribute="leading" id="60u-Mu-B4c"/>
-                            <constraint firstItem="dox-5p-Q5u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="86R-WB-bpj"/>
+                            <constraint firstItem="dox-5p-Q5u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="140" id="86R-WB-bpj"/>
                             <constraint firstItem="kyQ-X8-mgW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8LR-1J-S57" userLabel="BottomToolbar.leading = trailingMargin"/>
                             <constraint firstItem="OJJ-LZ-hvW" firstAttribute="leading" secondItem="kyQ-X8-mgW" secondAttribute="leading" id="AsU-xk-tGv"/>
-                            <constraint firstItem="7Jq-0O-0cL" firstAttribute="top" secondItem="dox-5p-Q5u" secondAttribute="top" constant="64" id="Hxe-QJ-CgH"/>
+                            <constraint firstItem="7Jq-0O-0cL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="Hxe-QJ-CgH" userLabel="Image View.top = Safe Area.top + 160"/>
                             <constraint firstItem="dox-5p-Q5u" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="IEH-uE-K9q"/>
-                            <constraint firstItem="kyQ-X8-mgW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-80" id="Kk8-Hi-56L"/>
+                            <constraint firstItem="kyQ-X8-mgW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-140" id="Kk8-Hi-56L"/>
                             <constraint firstItem="kyQ-X8-mgW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="MXt-5K-WVW" userLabel="BottomToolbar.trailing = trailingMargin"/>
                             <constraint firstItem="7Jq-0O-0cL" firstAttribute="trailing" secondItem="dox-5p-Q5u" secondAttribute="trailing" id="XbG-rR-s1Z"/>
                             <constraint firstItem="dox-5p-Q5u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cEn-OF-GRX"/>
                             <constraint firstItem="OJJ-LZ-hvW" firstAttribute="trailing" secondItem="kyQ-X8-mgW" secondAttribute="trailing" id="isc-0Q-TP3"/>
-                            <constraint firstItem="bAP-Gt-4yF" firstAttribute="top" secondItem="dox-5p-Q5u" secondAttribute="top" constant="64" id="jN8-6z-dNh"/>
+                            <constraint firstItem="bAP-Gt-4yF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="jN8-6z-dNh" userLabel="Top Text Field.top = Safe Area.top + 160"/>
                             <constraint firstItem="bAP-Gt-4yF" firstAttribute="leading" secondItem="dox-5p-Q5u" secondAttribute="leading" id="k5E-Wu-yTg"/>
-                            <constraint firstItem="OJJ-LZ-hvW" firstAttribute="bottom" secondItem="kyQ-X8-mgW" secondAttribute="bottom" constant="-64" id="niv-Fp-HrQ"/>
-                            <constraint firstItem="7Jq-0O-0cL" firstAttribute="bottom" secondItem="kyQ-X8-mgW" secondAttribute="bottom" constant="-64" id="xIy-db-QYp"/>
+                            <constraint firstItem="OJJ-LZ-hvW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-200" id="niv-Fp-HrQ" userLabel="Bottom Text Field.bottom = Safe Area.bottom - 160"/>
+                            <constraint firstItem="7Jq-0O-0cL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-200" id="xIy-db-QYp" userLabel="Image View.bottom = Safe Area.bottom - 160"/>
                         </constraints>
                     </view>
                     <connections>
