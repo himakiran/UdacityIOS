@@ -45,10 +45,9 @@
                                             <action selector="pickPhotoFromAlbum:" destination="BYZ-38-t0r" id="ftD-eC-Cf2"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VCq-FF-8Zq"/>
                                     <barButtonItem style="plain" id="KjM-Pa-1hc">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="afJ-Pz-AMe">
-                                            <rect key="frame" x="305" y="1" width="49" height="42"/>
+                                            <rect key="frame" x="54.5" y="1" width="49" height="42"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="camera" catalog="system"/>
                                             <connections>
@@ -56,6 +55,7 @@
                                             </connections>
                                         </button>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VCq-FF-8Zq"/>
                                 </items>
                             </toolbar>
                             <imageView clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Jq-0O-0cL">
