@@ -51,6 +51,18 @@ class CollectionViewController: UICollectionViewController {
         return cell
     }
     
+    // MARK: Collection View show selected meme
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath:IndexPath) {
+
+        let meme = self.memes[(indexPath as NSIndexPath).row]
+        let storyboard = UIStoryboard (name: "Main", bundle: nil)
+        let  vc = storyboard.instantiateViewController(withIdentifier: "memeDetailViewController") as! MemeDetailViewController
+        vc.showImage = meme.memedImage
+        let nc = navigationController
+        nc?.pushViewController(vc, animated: true)
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.reloadData()

@@ -17,6 +17,7 @@
 		FAE5BDE7257BC5FA000312C5 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5BDE6257BC5FA000312C5 /* CollectionViewController.swift */; };
 		FAE5BDEA257BC64B000312C5 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5BDE9257BC64B000312C5 /* CollectionViewCell.swift */; };
 		FAE5BDF0257CE66A000312C5 /* MemeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5BDEF257CE66A000312C5 /* MemeEditorViewController.swift */; };
+		FAE5BDF5257D0D20000312C5 /* MemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5BDF4257D0D20000312C5 /* MemeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FAE5BDE6257BC5FA000312C5 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		FAE5BDE9257BC64B000312C5 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FAE5BDEF257CE66A000312C5 /* MemeEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorViewController.swift; sourceTree = "<group>"; };
+		FAE5BDF4257D0D20000312C5 /* MemeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				FAE5BDE6257BC5FA000312C5 /* CollectionViewController.swift */,
 				FAE5BDE9257BC64B000312C5 /* CollectionViewCell.swift */,
 				FAE5BDEF257CE66A000312C5 /* MemeEditorViewController.swift */,
+				FAE5BDF4257D0D20000312C5 /* MemeDetailViewController.swift */,
 			);
 			path = MeMeV2;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				FAE5BDEA257BC64B000312C5 /* CollectionViewCell.swift in Sources */,
 				FAE5BDB2257AB1DE000312C5 /* SceneDelegate.swift in Sources */,
 				FAE5BDE4257BC598000312C5 /* TableViewController.swift in Sources */,
+				FAE5BDF5257D0D20000312C5 /* MemeDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

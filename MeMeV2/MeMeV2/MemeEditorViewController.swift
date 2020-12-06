@@ -10,11 +10,17 @@ import UIKit
 
 
 class MemeEditorViewController: UIViewController,  UITextFieldDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    //MARK: Properties for Edit function
+    
+    var topText:String! = "TOP"
+    var bottomText:String! = "BOTTOM"
+    var OrigImage:UIImage! = nil
 
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView:UIImageView!
     @IBOutlet weak var cameraButton: UIButton!
-    @IBOutlet weak var topTextField: UITextField!
-    @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var topTextField:UITextField!
+    @IBOutlet weak var bottomTextField:UITextField!
     
     @IBOutlet weak var topToolBar: UIToolbar!
     @IBOutlet weak var bottomToolBar: UIToolbar!
@@ -48,6 +54,7 @@ class MemeEditorViewController: UIViewController,  UITextFieldDelegate, UIImageP
         subscribeToKeyboardNotifications()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardHideNotifications()
+        setTextAndImage()
         }
     
     
@@ -133,7 +140,7 @@ class MemeEditorViewController: UIViewController,  UITextFieldDelegate, UIImageP
             let object = UIApplication.shared.delegate
             let appDelegate = object as! AppDelegate
             appDelegate.memes.append(meme)
-            print("Appended Meme")
+            
     }
     
     func generateMeme() -> UIImage {
@@ -172,6 +179,16 @@ class MemeEditorViewController: UIViewController,  UITextFieldDelegate, UIImageP
         self.bottomTextField.text = "BOTTOM"
         self.imageView.image = nil
         
+    }
+    
+    //MARK: Function to set selected Meme after Edit Meme is selected
+    
+    func  setTextAndImage()
+    {
+        self.topTextField.text = self.topText
+        self.bottomTextField.text = self.bottomText
+        self.imageView.image = self.OrigImage
+        self.shareButton.isEnabled = true
     }
     
     
