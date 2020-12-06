@@ -5,54 +5,63 @@
 //  Created by Himakiran Kumar on 05/12/20.
 //
 
-//
-//  VillainCollectionViewController.swift
-//  BondVillains
-//
-//  Created by Gabrielle Miller-Messner on 2/3/15.
-//  Copyright (c) 2015 Udacity. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
-// MARK: - VillainCollectionViewController: UICollectionViewController
+
 
 class CollectionViewController: UICollectionViewController {
 
     // MARK: Properties
     
-    // Get ahold of some villains, for the table
-    // This is an array of Villain instances.
-    let allVillains = Villain.allVillains
+    var memes: [Meme]! {
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        return appDelegate.memes
+    }
     
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     // MARK: Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        collectionView.reloadData()
     }
     
     // MARK: Collection View Data Source
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.allVillains.count
+        
+        return self.memes.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
         
-        let villain = self.allVillains[(indexPath as NSIndexPath).row]
+        let meme = self.memes[(indexPath as NSIndexPath).row]
         
         // Set the name and image
-        cell.NameLabel.text = villain.name
-        cell.ImageView?.image = UIImage(named: villain.imageName)
+        cell.NameLabel.text = "\(meme.topText)...\(meme.bottomText)"
+        cell.ImageView?.image = meme.memedImage
         //cell.schemeLabel.text = "Scheme: \(villain.evilScheme)"
         
         return cell
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.reloadData()
+        let space:CGFloat = 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+    }
     
+  
 }
 
