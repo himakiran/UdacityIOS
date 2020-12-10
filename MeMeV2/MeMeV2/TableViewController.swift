@@ -71,6 +71,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             nc?.pushViewController(vc, animated: true)
         }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         tablView.reloadData()
     }
     

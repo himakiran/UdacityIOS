@@ -28,23 +28,28 @@ class MemeEditorViewController: UIViewController,  UITextFieldDelegate, UIImageP
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
-        NSAttributedString.Key.strokeColor: UIColor.white,
-        NSAttributedString.Key.foregroundColor: UIColor.black,
-        NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSAttributedString.Key.strokeWidth:  4.0
+        NSAttributedString.Key.strokeColor: UIColor.black,
+        NSAttributedString.Key.foregroundColor: UIColor.white,
+        NSAttributedString.Key.font: UIFont(name:"HelveticaNeue-CondensedBlack",size:40)!,
+        NSAttributedString.Key.strokeWidth:  -3.0
     ]
     
     // setting up delegates and centering and formatting text
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.topTextField.delegate = self
-        self.bottomTextField.delegate = self
-        self.topTextField.defaultTextAttributes = memeTextAttributes
-        self.bottomTextField.defaultTextAttributes = memeTextAttributes
-        self.topTextField.textAlignment = .center
-        self.bottomTextField.textAlignment = .center
+
+        configureTextField(self.topTextField)
+        configureTextField(self.bottomTextField)
         self.shareButton.isEnabled = false
+        
+    }
+    
+    func configureTextField(_ textField: UITextField) {
+        textField.delegate = self
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
+        
         
     }
     
@@ -65,17 +70,19 @@ class MemeEditorViewController: UIViewController,  UITextFieldDelegate, UIImageP
     }
     // Action to choose photo for memes from Album
     @IBAction func pickPhotoFromAlbum(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
+          pickAnImageAndShow(from: .photoLibrary)
     }
     // Action to choose photo for memes from Camera
     @IBAction func pickPhotoFromCamera(_ sender: Any) {
+         pickAnImageAndShow(from: .camera)
+    }
+    
+    func pickAnImageAndShow(from photoSource: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = photoSource
         present(imagePicker, animated: true, completion: nil)
+        
     }
     
     // Implementing delegate functionality of UIImagePickerControllerDelegate
@@ -97,7 +104,7 @@ class MemeEditorViewController: UIViewController,  UITextFieldDelegate, UIImageP
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             textField.resignFirstResponder()
-            return true;
+            return true
         }
     
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
@@ -109,7 +116,10 @@ class MemeEditorViewController: UIViewController,  UITextFieldDelegate, UIImageP
     
     // Shifting the view up when keyboard is displayed
     @objc func keyboardWillShow(_ notification: Notification){
-        view.frame.origin.y = view.frame.origin.y - (getKeyboardHeight(notification) - 160)
+        if bottomTextField.isFirstResponder {
+           view.frame.origin.y = view.frame.origin.y - (getKeyboardHeight(notification) - 160)
+        }
+        
     }
     
     // subscribing to keyboard show notifications
@@ -175,9 +185,12 @@ class MemeEditorViewController: UIViewController,  UITextFieldDelegate, UIImageP
     }
     
     @IBAction func onCancel(_ sender: Any) {
+        
         self.topTextField.text = "TOP"
         self.bottomTextField.text = "BOTTOM"
         self.imageView.image = nil
+        dismiss(animated: true, completion: nil)
+        
         
     }
     

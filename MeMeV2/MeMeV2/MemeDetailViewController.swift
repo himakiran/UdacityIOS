@@ -21,6 +21,7 @@ class MemeDetailViewController: UIViewController {
     var showImage:UIImage! = nil
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         imgView.image = showImage
     }
     
