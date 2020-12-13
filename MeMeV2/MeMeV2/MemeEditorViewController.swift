@@ -117,7 +117,8 @@ class MemeEditorViewController: UIViewController,  UITextFieldDelegate, UIImageP
     // Shifting the view up when keyboard is displayed
     @objc func keyboardWillShow(_ notification: Notification){
         if bottomTextField.isFirstResponder {
-           view.frame.origin.y = view.frame.origin.y - (getKeyboardHeight(notification) - 160)
+           view.frame.origin.y = -getKeyboardHeight(notification)
+            //view.frame.origin.y - (getKeyboardHeight(notification) - 160)
         }
         
     }
